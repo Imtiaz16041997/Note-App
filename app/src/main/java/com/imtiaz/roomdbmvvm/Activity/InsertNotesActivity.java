@@ -22,8 +22,8 @@ import java.util.Locale;
 public class InsertNotesActivity extends AppCompatActivity {
 
     ActivityInsertNoteBinding binding;
-    String title,subTitle, notes;
     NotesViewModel notesViewModel;
+    String title,subTitle, notes;
     String priority = "1";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,10 +80,14 @@ public class InsertNotesActivity extends AppCompatActivity {
         binding.doneNotesBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                title = binding.textViewNoteTitle.getText().toString();
-                subTitle = binding.textViewNoteSubTitle.getText().toString();
-                notes = binding.textViewNotes.getText().toString();
+                title = binding.textViewNoteTitle.getText().toString().trim();
+                subTitle = binding.textViewNoteSubTitle.getText().toString().trim();
+                notes = binding.textViewNotes.getText().toString().trim();
 
+                if(title.isEmpty() || subTitle.isEmpty() || notes.isEmpty()){
+                    Toast.makeText(InsertNotesActivity.this, "Note can't be empty", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
                 CreateNotes(title,subTitle,notes);
 
@@ -106,6 +110,7 @@ public class InsertNotesActivity extends AppCompatActivity {
          notesViewModel.insert(notes1);
         Toast.makeText(this, "Notes Created Successfully", Toast.LENGTH_SHORT).show();
         finish();
+
 
 
 
