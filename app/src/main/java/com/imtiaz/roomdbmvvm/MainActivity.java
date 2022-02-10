@@ -1,9 +1,11 @@
 package com.imtiaz.roomdbmvvm;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
@@ -14,7 +16,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.SearchView;
+
 import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -32,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     NotesViewModel notesViewModel;
     RecyclerView notesRecycler;
     NotesAdapter adapter;
+    SearchView search_View;
 
     TextView noFilter,highToLow,lowToHigh;
     List<Note> filterNotesAllList;
@@ -46,6 +49,20 @@ public class MainActivity extends AppCompatActivity {
         noFilter = findViewById(R.id.noFilter);
         highToLow = findViewById(R.id.highToLow);
         lowToHigh = findViewById(R.id.lowToHigh);
+        search_View = findViewById(R.id.search_View);
+
+        search_View.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                SearchFilter(newText);
+                return false;
+            }
+        });
 
         noFilter.setBackgroundResource(R.drawable.filter_selected_shape);
 
@@ -133,47 +150,59 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setAdapter(List<Note> notes){
-        notesRecycler.setLayoutManager(new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));
+        notesRecycler.setHasFixedSize(true);
+        notesRecycler.setLayoutManager(new StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL));
         adapter = new NotesAdapter(MainActivity.this,notes);
         notesRecycler.setAdapter(adapter);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.search_notes,menu);
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        getMenuInflater().inflate(R.menu.search_notes,menu);
+//
+//        MenuItem menuItem = menu.findItem(R.id.app_bar_search);
+//
+//        SearchView searchView = (SearchView) menuItem.getActionView();
+//
+//        searchView.setQueryHint("Search Notes here...");
+//        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+//            @Override
+//            public boolean onQueryTextSubmit(String s) {
+//                return false;
+//            }
+//
+//            @Override
+//            public boolean onQueryTextChange(String s) {
+//                NotesFilter(s);
+//                return false;
+//            }
+//        });
+//
+//        return super.onCreateOptionsMenu(menu);
+//    }
+//
+//    private void NotesFilter(String newText) {
+//
+////        Log.e("@@@@","NotesFilter:"+newText);
+//
+//        ArrayList<Note> FilterNames = new ArrayList<>();
+//
+//        for(Note notes : this.filterNotesAllList){
+//            if(notes.notesTitle.contains(newText) || notes.notesSubtitle.contains(newText)){
+//                FilterNames.add(notes);
+//            }
+//        }
+//        this.adapter.searchNotes(FilterNames);
+//    }
 
-        MenuItem menuItem = menu.findItem(R.id.app_bar_search);
-
-        SearchView searchView = (SearchView) menuItem.getActionView();
-
-        searchView.setQueryHint("Search Notes here...");
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String s) {
-                return false;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String s) {
-                NotesFilter(s);
-                return false;
-            }
-        });
-
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    private void NotesFilter(String newText) {
-
-//        Log.e("@@@@","NotesFilter:"+newText);
-
-        ArrayList<Note> FilterNames = new ArrayList<>();
+    private void SearchFilter(String newText) {
+        ArrayList<Note> filtered = new ArrayList<>();
 
         for(Note notes : this.filterNotesAllList){
             if(notes.notesTitle.contains(newText) || notes.notesSubtitle.contains(newText)){
-                FilterNames.add(notes);
+                filtered.add(notes);
             }
         }
-        this.adapter.searchNotes(FilterNames);
+        this.adapter.searchNotes(filtered);
     }
 }

@@ -7,11 +7,19 @@
     android:background="#E8E8E8"
     tools:context=".MainActivity">
 
+    <androidx.appcompat.widget.SearchView
+        android:background="@drawable/filter_selected_shape"
+        android:layout_margin="6dp"
+        android:id="@+id/search_View"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+
     <LinearLayout
         android:id="@+id/filter"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/search_View"
         android:layout_margin="5dp">
 
         <ImageView
@@ -64,10 +72,11 @@
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_below="@id/filter"
         android:id="@+id/notesRecycler"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_below="@id/filter"
+        android:layout_marginTop="5dp" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/newNotesBtn"
