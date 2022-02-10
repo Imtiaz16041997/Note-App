@@ -17,6 +17,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -35,6 +36,9 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView notesRecycler;
     NotesAdapter adapter;
     SearchView search_View;
+    LinearLayout hideOutId,filter;
+
+    private  boolean button1IsVisible = true;
 
     TextView noFilter,highToLow,lowToHigh;
     List<Note> filterNotesAllList;
@@ -50,6 +54,28 @@ public class MainActivity extends AppCompatActivity {
         highToLow = findViewById(R.id.highToLow);
         lowToHigh = findViewById(R.id.lowToHigh);
         search_View = findViewById(R.id.search_View);
+        hideOutId = findViewById(R.id.hideOutId);
+        filter = findViewById(R.id.filter);
+
+
+
+        filter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(button1IsVisible == true){
+                    hideOutId.setVisibility(View.GONE);
+                    button1IsVisible = false;
+                }
+                else if(button1IsVisible==false)
+                {
+                    hideOutId.setVisibility(View.VISIBLE);
+                    button1IsVisible = true;
+                }
+//                hideOutId.setVisibility(View.VISIBLE);
+//                return;
+            }
+        });
+
 
         search_View.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
