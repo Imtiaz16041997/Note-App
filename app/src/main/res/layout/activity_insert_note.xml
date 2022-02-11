@@ -33,7 +33,7 @@
                     android:background="@drawable/edit_text_background"
                     android:gravity="center"
                     android:orientation="vertical"
-                    android:padding="4dp">
+                    android:padding="6dp">
 
                     <EditText
                         android:id="@+id/textView_noteTitle"
@@ -41,9 +41,10 @@
                         android:layout_height="wrap_content"
                         android:background="@android:color/transparent"
                         android:hint="Title"
-                        android:padding="8dp"
+                        android:padding="10dp"
+                        android:textSize="18sp"
                         android:textColor="@color/black"
-                        android:textStyle="normal" />
+                        android:textStyle="bold" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -61,7 +62,7 @@
                     android:background="@drawable/edit_text_background"
                     android:gravity="center"
                     android:orientation="vertical"
-                    android:padding="4dp">
+                    android:padding="6dp">
 
                     <EditText
                         android:id="@+id/textView_noteSubTitle"

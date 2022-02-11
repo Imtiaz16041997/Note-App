@@ -1,5 +1,6 @@
 package com.imtiaz.roomdbmvvm;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.lifecycle.Observer;
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,8 +22,10 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.imtiaz.roomdbmvvm.Activity.InsertNotesActivity;
+import com.imtiaz.roomdbmvvm.Activity.UpdateNotesActivity;
 import com.imtiaz.roomdbmvvm.Adapter.NotesAdapter;
 import com.imtiaz.roomdbmvvm.Entity.Note;
 import com.imtiaz.roomdbmvvm.ViewModel.NotesViewModel;
@@ -230,5 +234,48 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         this.adapter.searchNotes(filtered);
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.delete_menu,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if(item.getItemId() == R.id.ic_delete){
+            BottomSheetDialog sheetDialog = new BottomSheetDialog(MainActivity.this,R.style.BottomSheetStyle);
+
+            View view = LayoutInflater.from(MainActivity.this).
+                    inflate(R.layout.delete_bottom_sheet,(LinearLayout) findViewById(R.id.bottomSheet));
+
+            sheetDialog.setContentView(view);
+
+            TextView yes,no;
+            yes = view.findViewById(R.id.deleteYes);
+            no = view.findViewById(R.id.deleteNo);
+
+            yes.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    notesViewModel.deleteAllNotes();
+                    return;
+
+                }
+            });
+
+
+            no.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    sheetDialog.dismiss();
+                }
+            });
+
+            sheetDialog.show();
+        }
+        return true;
     }
 }
