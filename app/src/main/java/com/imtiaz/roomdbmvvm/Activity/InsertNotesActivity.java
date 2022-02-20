@@ -1,9 +1,12 @@
 package com.imtiaz.roomdbmvvm.Activity;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProviders;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
@@ -29,6 +32,10 @@ public class InsertNotesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityInsertNoteBinding.inflate(getLayoutInflater());
+        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setCustomView(R.layout.toolbar_layout);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
         setContentView(binding.getRoot());
 
         notesViewModel = ViewModelProviders.of(this).get(NotesViewModel.class);
@@ -111,8 +118,13 @@ public class InsertNotesActivity extends AppCompatActivity {
         Toast.makeText(this, "Notes Created Successfully", Toast.LENGTH_SHORT).show();
         finish();
 
+    }
 
-
-
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if(item.getItemId()==android.R.id.home){
+            this.finish();
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

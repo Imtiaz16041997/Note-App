@@ -1,6 +1,7 @@
 package com.imtiaz.roomdbmvvm;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.lifecycle.Observer;
@@ -50,7 +51,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setCustomView(R.layout.toolbar_layout);
         setContentView(R.layout.activity_main);
+
 
         newNotesBtn = findViewById(R.id.newNotesBtn);
         notesRecycler = findViewById(R.id.notesRecycler);

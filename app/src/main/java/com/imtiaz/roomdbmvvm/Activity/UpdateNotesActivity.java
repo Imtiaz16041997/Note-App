@@ -1,6 +1,7 @@
 package com.imtiaz.roomdbmvvm.Activity;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.lifecycle.ViewModelProviders;
@@ -34,6 +35,10 @@ public class UpdateNotesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityUpdateNotesBinding.inflate(getLayoutInflater());
+        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setCustomView(R.layout.toolbar_layout);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
         setContentView(binding.getRoot());
 
         //get the data through strings
@@ -132,6 +137,11 @@ public class UpdateNotesActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        if(item.getItemId()==android.R.id.home){
+            this.finish();
+        }
+
         if(item.getItemId() == R.id.ic_delete){
             BottomSheetDialog sheetDialog = new BottomSheetDialog(UpdateNotesActivity.this,R.style.BottomSheetStyle);
 
@@ -164,4 +174,6 @@ public class UpdateNotesActivity extends AppCompatActivity {
         }
         return true;
     }
+
+
 }
