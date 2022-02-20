@@ -3,16 +3,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="#E8E8E8"
+    android:background="@color/dark_late_gray"
     tools:context=".MainActivity">
 
     <androidx.appcompat.widget.SearchView
-        android:background="@drawable/filter_selected_shape"
-        android:layout_margin="6dp"
+        app:iconifiedByDefault="false"
         android:id="@+id/search_View"
         android:layout_width="match_parent"
-        android:layout_height="50dp"/>
+        android:layout_height="50dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="6dp"
+        android:background="@drawable/filter_selected_shape" />
 
     <LinearLayout
         android:id="@+id/filter"
