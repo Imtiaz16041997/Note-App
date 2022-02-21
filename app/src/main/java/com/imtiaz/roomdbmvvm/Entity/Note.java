@@ -39,8 +39,42 @@ public class Note {
         return id;
     }
 
+    @ColumnInfo(name = "image_path")
+    public String imagePath;
+
+    @ColumnInfo(name = "color")
+    public String color;
+
+    @ColumnInfo(name = "web_link")
+    public String webLink;
+
+
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public String getWebLink() {
+        return webLink;
+    }
+
+    public void setWebLink(String webLink) {
+        this.webLink = webLink;
     }
 
     //    public Note(String title, String description, int priority) {

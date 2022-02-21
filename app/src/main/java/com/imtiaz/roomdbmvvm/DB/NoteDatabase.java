@@ -9,7 +9,7 @@ import androidx.room.RoomDatabase;
 import com.imtiaz.roomdbmvvm.DAO.NoteDao;
 import com.imtiaz.roomdbmvvm.Entity.Note;
 
-@Database(entities = {Note.class},version = 1)
+@Database(entities = {Note.class},version = 2)
 public abstract class NoteDatabase extends RoomDatabase {
 
     private static NoteDatabase instance = null;
