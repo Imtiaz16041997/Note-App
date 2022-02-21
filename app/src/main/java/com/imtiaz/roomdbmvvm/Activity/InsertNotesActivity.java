@@ -32,6 +32,7 @@ public class InsertNotesActivity extends AppCompatActivity {
     String title,subTitle, notes;
     String priority = "1";
     private String selectedNoteColor;
+    private String selectedNoteColorPriority;
     private String selectedImagePath;
     private AlertDialog dialogAddURL;
     @Override
@@ -46,6 +47,7 @@ public class InsertNotesActivity extends AppCompatActivity {
 
         notesViewModel = ViewModelProviders.of(this).get(NotesViewModel.class);
 
+        priorityFunction();
 
 //        binding.greenPriority.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -110,6 +112,7 @@ public class InsertNotesActivity extends AppCompatActivity {
         });
 
         selectedNoteColor = "#333333"; //default note color
+        selectedNoteColorPriority = "#FF5151"; //default note color
         selectedImagePath =  "" ;
 
 
@@ -136,6 +139,76 @@ public class InsertNotesActivity extends AppCompatActivity {
         setSubtitleIndicatorColor();
 
     }
+
+    private void priorityFunction() {
+
+        final LinearLayout layoutMiscellaneous = findViewById(R.id.layoutMiscellaneous);
+        final BottomSheetBehavior<LinearLayout> bottomSheetBehavior = BottomSheetBehavior.from(layoutMiscellaneous);
+
+        layoutMiscellaneous.findViewById(R.id.textMiscellaneous).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(bottomSheetBehavior.getState() != BottomSheetBehavior.STATE_EXPANDED){
+                    bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                }else{
+                    bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                }
+            }
+        });
+
+        final ImageView redPriority = layoutMiscellaneous.findViewById(R.id.redPriority);
+        final ImageView yellowPriority = layoutMiscellaneous.findViewById(R.id.yellowPriority);
+        final ImageView greenPriority = layoutMiscellaneous.findViewById(R.id.greenPriority);
+
+        layoutMiscellaneous.findViewById(R.id.viewColorRed).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                redPriority.setImageResource(R.drawable.ic_done);
+                yellowPriority.setImageResource(0);
+                greenPriority.setImageResource(0);
+
+
+
+                Toast.makeText(InsertNotesActivity.this, "You listed priority High", Toast.LENGTH_SHORT).show();
+
+                priority = "1";
+            }
+        });
+
+        layoutMiscellaneous.findViewById(R.id.viewColorYellow).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                yellowPriority.setImageResource(R.drawable.ic_done);
+                redPriority.setImageResource(0);
+                greenPriority.setImageResource(0);
+
+
+
+                Toast.makeText(InsertNotesActivity.this, "You listed priority Medium", Toast.LENGTH_SHORT).show();
+
+
+                priority = "2";
+            }
+        });
+
+        layoutMiscellaneous.findViewById(R.id.viewColorGreen).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                greenPriority.setImageResource(R.drawable.ic_done);
+                redPriority.setImageResource(0);
+                yellowPriority.setImageResource(0);
+
+
+
+                Toast.makeText(InsertNotesActivity.this, "You listed priority Low", Toast.LENGTH_SHORT).show();
+
+
+                priority = "3";
+            }
+        });
+    }
+
+
 
     private void setSubtitleIndicatorColor() {
         GradientDrawable gradientDrawable = (GradientDrawable) binding.viewSubtitleIndicator.getBackground();
@@ -241,14 +314,14 @@ public class InsertNotesActivity extends AppCompatActivity {
 
         String date = java.text.DateFormat.getDateTimeInstance().format(new Date());
 
-         Note notes1 = new Note();
-         notes1.notesTitle = title;
-         notes1.notesSubtitle = subTitle;
-         notes1.notes = notes;
-         notes1.notesDate = date;
-         notes1.notesPriority = priority;
-         notes1.setColor(selectedNoteColor);
-         notesViewModel.insert(notes1);
+        Note notes1 = new Note();
+        notes1.notesTitle = title;
+        notes1.notesSubtitle = subTitle;
+        notes1.notes = notes;
+        notes1.notesDate = date;
+        notes1.notesPriority = priority;
+        notes1.setColor(selectedNoteColor);
+        notesViewModel.insert(notes1);
         Toast.makeText(this, "Notes Created Successfully", Toast.LENGTH_SHORT).show();
         finish();
 

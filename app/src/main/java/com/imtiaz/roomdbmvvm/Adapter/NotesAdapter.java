@@ -48,17 +48,17 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesViewHolder> {
     public void onBindViewHolder(@NonNull NotesViewHolder holder, int position) {
         Note note = notes.get(position);
 
-//        switch (note.notesPriority) {
-//            case "1":
-//                holder.notesPriority.setBackgroundResource(R.drawable.high_priority);
-//                break;
-//            case "2":
-//                holder.notesPriority.setBackgroundResource(R.drawable.medium_priority);
-//                break;
-//            case "3":
-//                holder.notesPriority.setBackgroundResource(R.drawable.low_priority);
-//                break;
-//        }
+        switch (note.notesPriority) {
+            case "1":
+                holder.notesPriority.setBackgroundResource(R.drawable.high_priority);
+                break;
+            case "2":
+                holder.notesPriority.setBackgroundResource(R.drawable.medium_priority);
+                break;
+            case "3":
+                holder.notesPriority.setBackgroundResource(R.drawable.low_priority);
+                break;
+        }
 
         holder.notesTitle.setText(note.notesTitle);
         holder.notesSubtitle.setText(note.notesSubtitle);
@@ -103,7 +103,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesViewHolder> {
     LinearLayout layoutNote;
     public NotesViewHolder(@NonNull View itemView) {
         super(itemView);
-//        notesPriority = itemView.findViewById(R.id.notesPriority);
+        notesPriority = itemView.findViewById(R.id.notesPriority);
         notesTitle = itemView.findViewById(R.id.notesTitle);
         notesSubtitle = itemView.findViewById(R.id.notesSubtitle);
         notesDate = itemView.findViewById(R.id.notesDate);
