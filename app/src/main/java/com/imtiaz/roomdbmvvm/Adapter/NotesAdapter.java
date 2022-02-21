@@ -65,8 +65,8 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesViewHolder> {
         holder.notesDate.setText(note.notesDate);
 
         GradientDrawable gradientDrawable = (GradientDrawable) holder.layoutNote.getBackground();
-        if(note.color != null){
-            gradientDrawable.setColor(Color.parseColor(note.color));
+        if(note.getColor() != null){
+            gradientDrawable.setColor(Color.parseColor(note.getColor()));
         }else{
             gradientDrawable.setColor(Color.parseColor("#333333"));
         }

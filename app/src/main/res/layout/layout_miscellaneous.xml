@@ -180,12 +180,18 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content">
 
+            <View
+                android:id="@+id/viewColorRed"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:background="@drawable/low_priority"/>
+
         <ImageView
             android:id="@+id/redPriority"
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:layout_margin="10dp"
-            android:background="@drawable/low_priority" />
+            android:layout_margin="5dp"
+             />
 
         </FrameLayout>
 
@@ -194,26 +200,37 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content">
 
+            <View
+                android:id="@+id/viewColorYellow"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:background="@drawable/medium_priority"/>
+
         <ImageView
             android:id="@+id/yellowPriority"
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:layout_margin="10dp"
-            android:background="@drawable/medium_priority" />
+            android:layout_margin="5dp"
+             />
 
         </FrameLayout>
 
         <FrameLayout
-            android:layout_weight="3"
+            android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/viewColorGreen"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:background="@drawable/high_priority"/>
 
         <ImageView
             android:id="@+id/greenPriority"
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:layout_margin="10dp"
-            android:background="@drawable/high_priority"
+            android:layout_margin="5dp"
             android:src="@drawable/ic_done" />
 
         </FrameLayout>
