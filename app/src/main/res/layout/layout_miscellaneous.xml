@@ -191,6 +191,7 @@
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_margin="5dp"
+            android:src="@drawable/ic_done"
              />
 
         </FrameLayout>
@@ -231,7 +232,7 @@
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_margin="5dp"
-            android:src="@drawable/ic_done" />
+             />
 
         </FrameLayout>
 

@@ -163,6 +163,7 @@ public class InsertNotesActivity extends AppCompatActivity {
         layoutMiscellaneous.findViewById(R.id.viewColorRed).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                selectedNoteColorPriority = "#FF5151";
                 redPriority.setImageResource(R.drawable.ic_done);
                 yellowPriority.setImageResource(0);
                 greenPriority.setImageResource(0);
@@ -178,8 +179,9 @@ public class InsertNotesActivity extends AppCompatActivity {
         layoutMiscellaneous.findViewById(R.id.viewColorYellow).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                yellowPriority.setImageResource(R.drawable.ic_done);
+                selectedNoteColorPriority = "#FFFF00";
                 redPriority.setImageResource(0);
+                yellowPriority.setImageResource(R.drawable.ic_done);
                 greenPriority.setImageResource(0);
 
 
@@ -194,9 +196,10 @@ public class InsertNotesActivity extends AppCompatActivity {
         layoutMiscellaneous.findViewById(R.id.viewColorGreen).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                greenPriority.setImageResource(R.drawable.ic_done);
+                selectedNoteColorPriority = "#11D99B";
                 redPriority.setImageResource(0);
                 yellowPriority.setImageResource(0);
+                greenPriority.setImageResource(R.drawable.ic_done);
 
 
 

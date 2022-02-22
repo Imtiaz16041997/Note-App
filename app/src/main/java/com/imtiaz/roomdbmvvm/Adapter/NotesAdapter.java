@@ -50,13 +50,13 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesViewHolder> {
 
         switch (note.notesPriority) {
             case "1":
-                holder.notesPriority.setBackgroundResource(R.drawable.high_priority);
+                holder.notesPriority.setBackgroundResource(R.drawable.low_priority);
                 break;
             case "2":
                 holder.notesPriority.setBackgroundResource(R.drawable.medium_priority);
                 break;
             case "3":
-                holder.notesPriority.setBackgroundResource(R.drawable.low_priority);
+                holder.notesPriority.setBackgroundResource(R.drawable.high_priority);
                 break;
         }
 
