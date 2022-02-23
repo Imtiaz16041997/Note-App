@@ -83,6 +83,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesViewHolder> {
                  intent.putExtra("subtitle",note.notesSubtitle);
                  intent.putExtra("note",note.notes);
                  intent.putExtra("priority",note.notesPriority);
+                 intent.putExtra("color",note.color);
                  context.startActivity(intent);
             }
         });

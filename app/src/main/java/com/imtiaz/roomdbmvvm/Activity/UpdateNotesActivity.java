@@ -34,7 +34,8 @@ import java.util.Locale;
 public class UpdateNotesActivity extends AppCompatActivity {
     ActivityUpdateNotesBinding binding;
     String priority = "1";
-    String stitle,ssubtitle,snotes,spriority;
+    String colorSelect = "1";
+    String stitle,ssubtitle,snotes,spriority,scolor;
     private String selectedNoteColor;
     private String selectedImagePath;
     private AlertDialog dialogAddURL;
@@ -56,10 +57,12 @@ public class UpdateNotesActivity extends AppCompatActivity {
         ssubtitle = getIntent().getStringExtra("subtitle");
         snotes = getIntent().getStringExtra("note");
         spriority = getIntent().getStringExtra("priority");
+        scolor = getIntent().getStringExtra("color");
 
         binding.textViewNoteTitleUpdate.setText(stitle);
         binding.textViewNoteSubTitleUpdate.setText(ssubtitle);
         binding.textViewNotesUpdate.setText(snotes);
+
 
 //        if(spriority.equals("1")) {
 //            binding.imageViewHighUpdate.setImageResource(R.drawable.ic_done);
@@ -157,7 +160,8 @@ public class UpdateNotesActivity extends AppCompatActivity {
         updateNotes.notes = snotes;
         updateNotes.notesDate = date;
         updateNotes.notesPriority = priority;
-        updateNotes.setColor(selectedNoteColor);
+//        updateNotes.setColor(selectedNoteColor);
+        updateNotes.color = colorSelect;
         notesViewModel.update(updateNotes);
         Toast.makeText(this, "Notes Updated Successfully", Toast.LENGTH_SHORT).show();
         finish();
