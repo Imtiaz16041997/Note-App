@@ -187,24 +187,24 @@
 
                             <ImageView
                                 android:id="@+id/imageView_highUpdate"
-                                android:layout_width="25dp"
-                                android:layout_height="25dp"
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
                                 android:layout_margin="10dp"
-                                android:background="@drawable/high_priority" />
+                                android:background="@drawable/background_note_color_3" />
 
                             <ImageView
                                 android:id="@+id/imageView_mediumUpdate"
-                                android:layout_width="25dp"
-                                android:layout_height="25dp"
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
                                 android:layout_margin="10dp"
-                                android:background="@drawable/medium_priority" />
+                                android:background="@drawable/background_note_color_medium" />
 
                             <ImageView
                                 android:id="@+id/imageView_lowUpdate"
-                                android:layout_width="25dp"
-                                android:layout_height="25dp"
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
                                 android:layout_margin="10dp"
-                                android:background="@drawable/low_priority" />
+                                android:background="@drawable/background_note_color_high" />
 
                         </LinearLayout>
             <androidx.cardview.widget.CardView

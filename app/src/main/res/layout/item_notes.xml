@@ -29,7 +29,7 @@
                 android:layout_height="20dp"
                 android:layout_gravity="right"
                 android:layout_margin="10dp"
-                android:background="@drawable/high_priority"/>
+                android:background="@drawable/background_note_color_3"/>
 
             <LinearLayout
                 android:layout_width="match_parent"

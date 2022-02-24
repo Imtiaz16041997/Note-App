@@ -1,5 +1,6 @@
 package com.imtiaz.roomdbmvvm.Adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -44,19 +45,20 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesViewHolder> {
         return new NotesViewHolder(LayoutInflater.from(context).inflate(R.layout.item_notes,parent,false));
     }
 
+    @SuppressLint("NewApi")
     @Override
     public void onBindViewHolder(@NonNull NotesViewHolder holder, int position) {
         Note note = notes.get(position);
 
         switch (note.notesPriority) {
             case "1":
-                holder.notesPriority.setBackgroundResource(R.drawable.high_priority);
+                holder.notesPriority.setBackgroundResource(R.drawable.background_note_color_high);
                 break;
             case "2":
-                holder.notesPriority.setBackgroundResource(R.drawable.medium_priority);
+                holder.notesPriority.setBackgroundResource(R.drawable.background_note_color_medium);
                 break;
             case "3":
-                holder.notesPriority.setBackgroundResource(R.drawable.low_priority);
+                holder.notesPriority.setBackgroundResource(R.drawable.background_note_color_3);
                 break;
         }
 
