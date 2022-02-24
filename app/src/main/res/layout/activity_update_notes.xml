@@ -1,152 +1,262 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/dark_late_gray2"
     tools:context=".Activity.UpdateNotesActivity">
-    <ScrollView
-        android:id="@+id/scrollView"
-        android:visibility="visible"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    <LinearLayout
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:cardBackgroundColor="@color/white"
-            android:layout_margin="8dp"
-            app:cardCornerRadius="5dp"
-            app:cardElevation="8dp">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/edit_text_background"
-                android:padding="4dp"
-                android:gravity="center"
-                android:orientation="vertical">
-                <EditText
-                    android:id="@+id/textViewNoteTitleUpdate"
-                    android:padding="8dp"
-                    android:textStyle="normal"
-                    android:background="@drawable/edit_text_background"
-                    android:hint="Title"
-                    android:textColor="@color/black"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:cardBackgroundColor="@color/white"
-            android:layout_margin="8dp"
-            app:cardCornerRadius="5dp"
-            app:cardElevation="8dp">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/edit_text_background"
-                android:padding="4dp"
-                android:gravity="center"
-                android:orientation="vertical">
-                <EditText
-                    android:id="@+id/textViewNoteSubTitleUpdate"
-                    android:padding="8dp"
-                    android:textStyle="normal"
-                    android:hint="Subtitle.."
-                    android:textSize="18sp"
-                    android:textColor="@color/black"
-                    android:background="@drawable/edit_text_background"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        app:layout_anchor="@+id/relativeLayout"
+        app:layout_anchorGravity="center">
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:padding="8dp"
-            android:layout_margin="8dp"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Priority"
-                android:layout_marginRight="15dp"
-                android:layout_marginLeft="15dp"
-                android:textStyle="bold"
-                android:textColor="@color/black"/>
+                android:orientation="horizontal">
 
-            <ImageView
-                android:id="@+id/imageView_highUpdate"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_margin="10dp"
-                android:background="@drawable/high_priority" />
+                <ImageView
+                    android:id="@+id/imageBack"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginRight="12dp"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_back"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/colorIcons" />
 
-            <ImageView
-                android:id="@+id/imageView_mediumUpdate"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_margin="10dp"
-                android:background="@drawable/medium_priority" />
+                <ImageView
+                    android:id="@+id/updateNotesBtn"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="12dp"
+                    android:background="@drawable/background_done_button"
+                    android:contentDescription="@string/app_name"
+                    android:padding="4dp"
+                    android:src="@drawable/ic_done"
+                    app:layout_constraintBottom_toBottomOf="@id/imageBack"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/imageBack"
+                    app:tint="@color/colorIcons" />
 
-            <ImageView
-                android:id="@+id/imageView_lowUpdate"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_margin="10dp"
-                android:background="@drawable/low_priority" />
+            </RelativeLayout>
 
-        </LinearLayout>
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:cardBackgroundColor="@color/white"
-            android:layout_margin="8dp"
-            app:cardCornerRadius="5dp"
-            app:cardElevation="6dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edit_text_background"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_4sdp">
+
+                    <EditText
+                        android:id="@+id/textViewNoteTitleUpdate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:fontFamily="@font/ubuntu_bold"
+                        android:hint="Title"
+                        android:imeOptions="actionDone"
+                        android:importantForAutofill="no"
+                        android:includeFontPadding="false"
+                        android:inputType="text"
+                        android:padding="@dimen/_10sdp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/colorTextHint"
+                        android:textSize="16dp"
+                        android:textStyle="bold"
+                        app:layout_constraintTop_toBottomOf="@id/imageBack" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            //time
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/edit_text_background"
-                android:padding="8dp"
-                android:gravity="center"
                 android:orientation="vertical">
-                <EditText
-                    android:id="@+id/textViewNotesUpdate"
-                    android:padding="15dp"
-                    android:textStyle="normal"
-                    android:hint="Notes.."
-                    android:gravity="start"
-                    android:textSize="18sp"
-                    android:textColor="@color/black"
+
+                <TextView
+                    android:id="@+id/textDateTime"
                     android:layout_width="match_parent"
-                    android:inputType="textMultiLine"
-                    android:background="@drawable/edit_text_background"
-                    android:layout_height="300dp"/>
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:fontFamily="@font/ubuntu_regular"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/colorIcons"
+                    android:textSize="15dp"
+                    app:layout_constraintEnd_toEndOf="@id/textView_noteTitle"
+                    app:layout_constraintStart_toStartOf="@id/textView_noteTitle"
+                    app:layout_constraintTop_toBottomOf="@id/textView_noteTitle" />
+
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
 
-    </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp"
+                android:background="@color/dark_late_gray2"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="8dp">
+
+                    <EditText
+                        android:id="@+id/textViewNoteSubTitleUpdate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:fontFamily="@font/ubuntu_medium"
+                        android:importantForAutofill="no"
+                        android:includeFontPadding="false"
+                        android:hint="Subtitle.."
+                        android:padding="10dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textDateTime"
+                        android:textColor="@color/black"
+                        android:textSize="13sp"
+                        android:textStyle="normal" />
+
+
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:padding="8dp"
+                            android:layout_margin="8dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Priority"
+                                android:layout_marginRight="15dp"
+                                android:layout_marginLeft="15dp"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"/>
+
+                            <ImageView
+                                android:id="@+id/imageView_highUpdate"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_margin="10dp"
+                                android:background="@drawable/high_priority" />
+
+                            <ImageView
+                                android:id="@+id/imageView_mediumUpdate"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_margin="10dp"
+                                android:background="@drawable/medium_priority" />
+
+                            <ImageView
+                                android:id="@+id/imageView_lowUpdate"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_margin="10dp"
+                                android:background="@drawable/low_priority" />
+
+                        </LinearLayout>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="6dp">
+
+
+                <ScrollView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="visible">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/edit_text_background"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <EditText
+                            android:id="@+id/textViewNotesUpdate"
+                            android:layout_width="match_parent"
+                            android:layout_height="300dp"
+                            android:background="@android:color/transparent"
+                            android:fontFamily="@font/ubuntu_regular"
+                            android:gravity="start"
+                            android:importantForAutofill="no"
+                            android:includeFontPadding="false"
+                            android:textColorHint="@color/colorTextHint"
+                            android:hint="Notes.."
+                            android:inputType="textMultiLine"
+                            android:padding="15dp"
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.666"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/layoutWebURL"
+                            app:layout_constraintVertical_bias="1.0"
+                            android:textStyle="normal" />
+
+                    </LinearLayout>
+                </ScrollView>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
     </ScrollView>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/updateNotesBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_margin="26dp"
-        android:backgroundTint="@color/Red2"
-        android:layout_alignParentEnd="true"
-        android:src="@drawable/ic_done" />
-
-</RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

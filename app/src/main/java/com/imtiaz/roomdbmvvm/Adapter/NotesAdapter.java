@@ -5,9 +5,11 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.imtiaz.roomdbmvvm.Activity.UpdateNotesActivity;
@@ -16,6 +18,7 @@ import com.imtiaz.roomdbmvvm.R;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class NotesAdapter extends RecyclerView.Adapter<NotesViewHolder> {
     Context context;
@@ -60,6 +63,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesViewHolder> {
         holder.notesTitle.setText(note.notesTitle);
         holder.notesSubtitle.setText(note.notesSubtitle);
         holder.notesDate.setText(note.notesDate);
+        holder.randomColor.setCardBackgroundColor(holder.itemView.getResources().getColor(getRandomColor(),null));
 
         //update data send to edit activity
 
@@ -80,6 +84,26 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesViewHolder> {
 
     }
 
+    private int getRandomColor() {
+        List<Integer> colorCode = new ArrayList<>();
+
+        colorCode.add(R.color.Silver);
+        colorCode.add(R.color.colorAccent);
+        colorCode.add(R.color.nron2);
+        colorCode.add(R.color.bluegrey);
+        colorCode.add(R.color.silver2);
+        colorCode.add(R.color.dark_late_gray);
+        colorCode.add(R.color.dark_late_gray2);
+        colorCode.add(R.color.light_blue);
+        colorCode.add(R.color.cadet_blue);
+        colorCode.add(R.color.Gray);
+        colorCode.add(R.color.black);
+
+        Random random  = new Random();
+        int color = random.nextInt(colorCode.size());
+        return colorCode.get(color);
+    }
+
     @Override
     public int getItemCount() {
         return notes.size();
@@ -90,11 +114,13 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesViewHolder> {
  class NotesViewHolder extends RecyclerView.ViewHolder {
     View notesPriority;
     TextView notesTitle,notesSubtitle,notesDate;
+    CardView randomColor;
     public NotesViewHolder(@NonNull View itemView) {
         super(itemView);
         notesPriority = itemView.findViewById(R.id.notesPriority);
         notesTitle = itemView.findViewById(R.id.notesTitle);
         notesSubtitle = itemView.findViewById(R.id.notesSubtitle);
         notesDate = itemView.findViewById(R.id.notesDate);
+        randomColor = itemView.findViewById(R.id.randomColor);
     }
 }

@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="@color/dark_late_gray"
+    android:background="@color/colorPrimary"
     tools:context=".MainActivity">
 
     <androidx.appcompat.widget.SearchView
@@ -31,7 +31,7 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_margin="5dp"
-            android:src="@drawable/filter"/>
+            android:src="@drawable/sorting"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -49,6 +49,7 @@
             android:paddingTop="7dp"
             android:paddingBottom="7dp"
             android:layout_margin="5dp"
+            android:textColor="@color/gray"
             android:background="@drawable/filter_unselected_shape"
             android:text="No Filter"/>
 
@@ -62,6 +63,7 @@
             android:paddingTop="7dp"
             android:layout_margin="5dp"
             android:paddingBottom="7dp"
+            android:textColor="@color/gray"
             android:background="@drawable/filter_unselected_shape"
             android:text="High To Low"/>
 
@@ -75,6 +77,7 @@
             android:paddingTop="7dp"
             android:paddingBottom="7dp"
             android:layout_margin="5dp"
+            android:textColor="@color/gray"
             android:background="@drawable/filter_unselected_shape"
             android:text="Low To High"/>
 
@@ -93,11 +96,14 @@
         android:id="@+id/newNotesBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_margin="26dp"
-        android:backgroundTint="@color/Red2"
-        android:layout_alignParentEnd="true"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginBottom="26dp"
+        android:backgroundTint="@color/gray"
         android:src="@drawable/ic_add" />
 
 

@@ -21,9 +21,9 @@
         android:id="@+id/textView_developerName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Created By\n Your Developer here"
+        android:text="Created By\n Ibnul Imtiaz"
         android:layout_marginBottom="5dp"
-        android:textColor="@color/Red2"
+        android:textColor="@color/Red"
         android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent" />
 
@@ -31,9 +31,9 @@
         android:id="@+id/textView_appName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Notes App"
+        android:text="NoteBucket"
         android:textSize="32dp"
-        android:textColor="@color/Red2"
+        android:textColor="@color/Green2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView_notes" />
@@ -45,7 +45,7 @@
         android:text="Life is too fast don't forget anything\n just note it"
         android:layout_marginTop="50dp"
         android:gravity="center"
-        android:textColor="@color/Red2"
+        android:textColor="@color/Gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView_appName" />

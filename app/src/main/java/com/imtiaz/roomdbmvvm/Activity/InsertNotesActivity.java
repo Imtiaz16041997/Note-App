@@ -5,6 +5,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProviders;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -21,6 +22,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
+import java.util.Random;
 
 public class InsertNotesActivity extends AppCompatActivity {
 
@@ -34,8 +36,8 @@ public class InsertNotesActivity extends AppCompatActivity {
         binding = ActivityInsertNoteBinding.inflate(getLayoutInflater());
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.toolbar_layout);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        getSupportActionBar().setDisplayShowHomeEnabled(true);
         setContentView(binding.getRoot());
 
         notesViewModel = ViewModelProviders.of(this).get(NotesViewModel.class);
@@ -81,6 +83,22 @@ public class InsertNotesActivity extends AppCompatActivity {
             }
         });
 
+        //backbutton
+        binding.imageBack.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
+
+        //Date
+        binding.textDateTime.setText(
+                //Pattern = Wednesday,14 June 2021
+                new SimpleDateFormat("EEEE, dd MMMM yyyy 'at' hh:mm a", Locale.getDefault())
+                        .format(new Date())
+        );
+
 
 
 
@@ -114,6 +132,8 @@ public class InsertNotesActivity extends AppCompatActivity {
          notes1.notes = notes;
          notes1.notesDate = date;
          notes1.notesPriority = priority;
+
+
          notesViewModel.insert(notes1);
         Toast.makeText(this, "Notes Created Successfully", Toast.LENGTH_SHORT).show();
         finish();

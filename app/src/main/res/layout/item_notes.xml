@@ -1,21 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/randomColor"
+    android:layout_margin="12dp"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="10dp"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_margin="@dimen/_5sdp"
         android:orientation="vertical">
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:cardBackgroundColor="@color/white"
-            android:layout_margin="8dp"
-            app:cardCornerRadius="5dp"
-            app:cardElevation="16dp">
+
+
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:cardBackgroundColor="@color/white"-->
+<!--            android:layout_margin="8dp"-->
+<!--            app:cardCornerRadius="5dp"-->
+<!--            app:cardElevation="8dp">-->
             <View
                 android:id="@+id/notesPriority"
                 android:layout_width="20dp"
@@ -37,13 +44,14 @@
                     android:padding="5dp"
                     android:textSize="15sp"
                     android:textStyle="bold"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:text="Title"/>
 
                 <TextView
                     android:id="@+id/notesSubtitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/white"
                     android:padding="5dp"
                     android:text="Subtitle"/>
 
@@ -51,16 +59,19 @@
                     android:id="@+id/notesDate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textSize="@dimen/_8sdp"
                     android:padding="5dp"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/black"
                     android:textStyle="bold"
                     android:text="23 jan 2021"/>
 
             </LinearLayout>
 
 
-        </androidx.cardview.widget.CardView>
-
+<!--        </androidx.cardview.widget.CardView>-->
 
     </LinearLayout>
-</LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

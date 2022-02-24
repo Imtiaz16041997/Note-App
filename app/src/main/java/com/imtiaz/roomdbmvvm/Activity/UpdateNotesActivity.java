@@ -24,6 +24,7 @@ import com.imtiaz.roomdbmvvm.databinding.ActivityUpdateNotesBinding;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 
 public class UpdateNotesActivity extends AppCompatActivity {
     ActivityUpdateNotesBinding binding;
@@ -37,8 +38,8 @@ public class UpdateNotesActivity extends AppCompatActivity {
         binding = ActivityUpdateNotesBinding.inflate(getLayoutInflater());
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.toolbar_layout);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        getSupportActionBar().setDisplayShowHomeEnabled(true);
         setContentView(binding.getRoot());
 
         //get the data through strings
@@ -109,6 +110,22 @@ public class UpdateNotesActivity extends AppCompatActivity {
                 UpdateNotes(stitle,ssubtitle,snotes);
             }
         });
+
+        //backbutton
+        binding.imageBack.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
+
+        //Date
+        binding.textDateTime.setText(
+                //Pattern = Wednesday,14 June 2021
+                new SimpleDateFormat("EEEE, dd MMMM yyyy 'at' hh:mm a", Locale.getDefault())
+                        .format(new Date())
+        );
 
     }
 
