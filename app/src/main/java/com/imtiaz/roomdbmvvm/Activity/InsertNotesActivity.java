@@ -12,6 +12,7 @@ import androidx.lifecycle.ViewModelProviders;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -382,6 +383,7 @@ public class InsertNotesActivity extends AppCompatActivity {
                         binding.imageNote.setImageBitmap(bitmap);
                         binding.imageNote.setVisibility(View.VISIBLE);
 
+                        selectedImagePath = getPathFromUri(selectedImageUri);
 
                     }catch(Exception exception){
                         Toast.makeText(this, exception.getMessage(), Toast.LENGTH_SHORT).show();
@@ -389,6 +391,20 @@ public class InsertNotesActivity extends AppCompatActivity {
                 }
             }
         }
+    }
+
+    private String getPathFromUri(Uri contentUri){
+        String filePath;
+        Cursor cursor = getContentResolver().query(contentUri, null,null,null,null);
+        if(cursor == null){
+            filePath = contentUri.getPath();
+        }else{
+            cursor.moveToFirst();
+            int index = cursor.getColumnIndex("_data");
+            filePath = cursor.getString(index);
+            cursor.close();
+        }
+        return filePath;
     }
 
     private void CreateNotes(String title, String subTitle, String notes) {
@@ -402,6 +418,7 @@ public class InsertNotesActivity extends AppCompatActivity {
         notes1.notesDate = date;
         notes1.notesPriority = priority;
         notes1.setColor(selectedNoteColor);
+        notes1.setImagePath(selectedImagePath);
         notesViewModel.insert(notes1);
         Toast.makeText(this, "Notes Created Successfully", Toast.LENGTH_SHORT).show();
         finish();

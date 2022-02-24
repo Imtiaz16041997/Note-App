@@ -2,6 +2,7 @@ package com.imtiaz.roomdbmvvm.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.view.LayoutInflater;
@@ -16,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.imtiaz.roomdbmvvm.Activity.UpdateNotesActivity;
 import com.imtiaz.roomdbmvvm.Entity.Note;
 import com.imtiaz.roomdbmvvm.R;
+import com.makeramen.roundedimageview.RoundedImageView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -71,6 +73,13 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesViewHolder> {
             gradientDrawable.setColor(Color.parseColor("#333333"));
         }
 
+        if(note.getImagePath() != null){
+            holder.imageNote.setImageBitmap(BitmapFactory.decodeFile(note.getImagePath()));
+            holder.imageNote.setVisibility(View.VISIBLE);
+        }else{
+            holder.imageNote.setVisibility(View.GONE);
+        }
+
         //update data send to edit activity
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -102,6 +111,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesViewHolder> {
     View notesPriority;
     TextView notesTitle,notesSubtitle,notesDate;
     LinearLayout layoutNote;
+    RoundedImageView imageNote;
     public NotesViewHolder(@NonNull View itemView) {
         super(itemView);
         notesPriority = itemView.findViewById(R.id.notesPriority);
@@ -109,5 +119,6 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesViewHolder> {
         notesSubtitle = itemView.findViewById(R.id.notesSubtitle);
         notesDate = itemView.findViewById(R.id.notesDate);
         layoutNote = itemView.findViewById(R.id.layoutNote);
+        imageNote = itemView.findViewById(R.id.imageNote);
     }
 }
