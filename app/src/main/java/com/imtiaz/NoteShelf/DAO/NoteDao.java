@@ -1,4 +1,4 @@
-package com.imtiaz.roomdbmvvm.DAO;
+package com.imtiaz.NoteShelf.DAO;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
@@ -7,7 +7,7 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
-import com.imtiaz.roomdbmvvm.Entity.Note;
+import com.imtiaz.NoteShelf.Entity.Note;
 
 import java.util.List;
 

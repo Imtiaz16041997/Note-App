@@ -1,4 +1,4 @@
-package com.imtiaz.roomdbmvvm.Entity;
+package com.imtiaz.NoteShelf.Entity;
 
 public class ScreenItem {
 

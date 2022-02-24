@@ -1,4 +1,4 @@
-package com.imtiaz.roomdbmvvm;
+package com.imtiaz.NoteShelf;
 
 import android.content.Context;
 

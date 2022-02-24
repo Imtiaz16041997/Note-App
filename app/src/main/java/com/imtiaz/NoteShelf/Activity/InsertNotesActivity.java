@@ -1,28 +1,25 @@
-package com.imtiaz.roomdbmvvm.Activity;
+package com.imtiaz.NoteShelf.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProviders;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.imtiaz.roomdbmvvm.Entity.Note;
+import com.imtiaz.NoteShelf.Entity.Note;
 
-import com.imtiaz.roomdbmvvm.R;
-import com.imtiaz.roomdbmvvm.ViewModel.NotesViewModel;
-import com.imtiaz.roomdbmvvm.databinding.ActivityInsertNoteBinding;
+import com.imtiaz.NoteShelf.R;
+import com.imtiaz.NoteShelf.ViewModel.NotesViewModel;
+import com.imtiaz.NoteShelf.databinding.ActivityInsertNoteBinding;
 
 
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
-import java.util.Random;
 
 public class InsertNotesActivity extends AppCompatActivity {
 

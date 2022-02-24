@@ -6,7 +6,7 @@ android {
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.imtiaz.roomdbmvvm"
+        applicationId "com.imtiaz.NoteShelf"
         minSdk 21
         targetSdk 32
         versionCode 1

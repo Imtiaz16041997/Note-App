@@ -1,4 +1,4 @@
-package com.imtiaz.roomdbmvvm.Entity;
+package com.imtiaz.NoteShelf.Entity;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;

@@ -1,4 +1,4 @@
-package com.imtiaz.roomdbmvvm;
+package com.imtiaz.NoteShelf;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -25,11 +24,10 @@ import android.widget.TextView;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.imtiaz.roomdbmvvm.Activity.InsertNotesActivity;
-import com.imtiaz.roomdbmvvm.Activity.UpdateNotesActivity;
-import com.imtiaz.roomdbmvvm.Adapter.NotesAdapter;
-import com.imtiaz.roomdbmvvm.Entity.Note;
-import com.imtiaz.roomdbmvvm.ViewModel.NotesViewModel;
+import com.imtiaz.NoteShelf.Activity.InsertNotesActivity;
+import com.imtiaz.NoteShelf.Adapter.NotesAdapter;
+import com.imtiaz.NoteShelf.Entity.Note;
+import com.imtiaz.NoteShelf.ViewModel.NotesViewModel;
 
 import java.util.ArrayList;
 import java.util.List;

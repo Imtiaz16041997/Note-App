@@ -1,12 +1,12 @@
-package com.imtiaz.roomdbmvvm.Repository;
+package com.imtiaz.NoteShelf.Repository;
 
 import android.app.Application;
 
 import androidx.lifecycle.LiveData;
 
-import com.imtiaz.roomdbmvvm.DAO.NoteDao;
-import com.imtiaz.roomdbmvvm.DB.NoteDatabase;
-import com.imtiaz.roomdbmvvm.Entity.Note;
+import com.imtiaz.NoteShelf.DAO.NoteDao;
+import com.imtiaz.NoteShelf.DB.NoteDatabase;
+import com.imtiaz.NoteShelf.Entity.Note;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.imtiaz.roomdbmvvm.ViewModel;
+package com.imtiaz.NoteShelf.ViewModel;
 
 import android.app.Application;
 
@@ -6,8 +6,8 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
-import com.imtiaz.roomdbmvvm.Entity.Note;
-import com.imtiaz.roomdbmvvm.Repository.NoteRepository;
+import com.imtiaz.NoteShelf.Entity.Note;
+import com.imtiaz.NoteShelf.Repository.NoteRepository;
 
 import java.util.List;
 

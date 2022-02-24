@@ -1,4 +1,4 @@
-package com.imtiaz.roomdbmvvm.Adapter;
+package com.imtiaz.NoteShelf.Adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -6,16 +6,15 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.imtiaz.roomdbmvvm.Activity.UpdateNotesActivity;
-import com.imtiaz.roomdbmvvm.Entity.Note;
-import com.imtiaz.roomdbmvvm.R;
+import com.imtiaz.NoteShelf.Activity.UpdateNotesActivity;
+import com.imtiaz.NoteShelf.Entity.Note;
+import com.imtiaz.NoteShelf.R;
 
 import java.util.ArrayList;
 import java.util.List;

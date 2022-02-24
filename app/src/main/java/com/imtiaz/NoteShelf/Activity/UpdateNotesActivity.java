@@ -1,9 +1,8 @@
-package com.imtiaz.roomdbmvvm.Activity;
+package com.imtiaz.NoteShelf.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.lifecycle.ViewModelProviders;
 
 import android.content.Intent;
@@ -17,13 +16,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
-import com.imtiaz.roomdbmvvm.Entity.Note;
-import com.imtiaz.roomdbmvvm.R;
-import com.imtiaz.roomdbmvvm.ViewModel.NotesViewModel;
-import com.imtiaz.roomdbmvvm.databinding.ActivityUpdateNotesBinding;
+import com.imtiaz.NoteShelf.Entity.Note;
+import com.imtiaz.NoteShelf.R;
+import com.imtiaz.NoteShelf.ViewModel.NotesViewModel;
+import com.imtiaz.NoteShelf.databinding.ActivityUpdateNotesBinding;
 
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 

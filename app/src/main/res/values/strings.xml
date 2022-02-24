@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">RoomDB(MVVM)</string>
+    <string name="app_name">NOTE SHELF</string>
+    <string name="noteshelf">NOTE SHELF</string>
 </resources>
