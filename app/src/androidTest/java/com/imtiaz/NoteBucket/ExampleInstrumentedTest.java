@@ -1,4 +1,4 @@
-package com.imtiaz.NoteShelf;
+package com.imtiaz.NoteBucket;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.imtiaz.roomdbmvvm", appContext.getPackageName());
+        assertEquals("com.imtiaz.NoteBucket", appContext.getPackageName());
     }
 }

@@ -1,4 +1,4 @@
-package com.imtiaz.NoteShelf.Activity;
+package com.imtiaz.NoteBucket.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,8 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
-import com.imtiaz.NoteShelf.MainActivity;
-import com.imtiaz.NoteShelf.R;
+import com.imtiaz.NoteBucket.MainActivity;
+import com.imtiaz.NoteBucket.R;
 
 public class SplashScreen extends AppCompatActivity {
 

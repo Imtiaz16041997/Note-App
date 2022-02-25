@@ -1,4 +1,4 @@
-package com.imtiaz.NoteShelf;
+package com.imtiaz.NoteBucket;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -24,10 +24,10 @@ import android.widget.TextView;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.imtiaz.NoteShelf.Activity.InsertNotesActivity;
-import com.imtiaz.NoteShelf.Adapter.NotesAdapter;
-import com.imtiaz.NoteShelf.Entity.Note;
-import com.imtiaz.NoteShelf.ViewModel.NotesViewModel;
+import com.imtiaz.NoteBucket.Activity.InsertNotesActivity;
+import com.imtiaz.NoteBucket.Adapter.NotesAdapter;
+import com.imtiaz.NoteBucket.Entity.Note;
+import com.imtiaz.NoteBucket.ViewModel.NotesViewModel;
 
 import java.util.ArrayList;
 import java.util.List;

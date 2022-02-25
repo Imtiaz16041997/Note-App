@@ -1,4 +1,4 @@
-package com.imtiaz.NoteShelf.ViewModel;
+package com.imtiaz.NoteBucket.ViewModel;
 
 import android.app.Application;
 
@@ -6,8 +6,8 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
-import com.imtiaz.NoteShelf.Entity.Note;
-import com.imtiaz.NoteShelf.Repository.NoteRepository;
+import com.imtiaz.NoteBucket.Entity.Note;
+import com.imtiaz.NoteBucket.Repository.NoteRepository;
 
 import java.util.List;
 

@@ -1,12 +1,12 @@
-package com.imtiaz.NoteShelf.Repository;
+package com.imtiaz.NoteBucket.Repository;
 
 import android.app.Application;
 
 import androidx.lifecycle.LiveData;
 
-import com.imtiaz.NoteShelf.DAO.NoteDao;
-import com.imtiaz.NoteShelf.DB.NoteDatabase;
-import com.imtiaz.NoteShelf.Entity.Note;
+import com.imtiaz.NoteBucket.DAO.NoteDao;
+import com.imtiaz.NoteBucket.DB.NoteDatabase;
+import com.imtiaz.NoteBucket.Entity.Note;
 
 import java.util.List;
 

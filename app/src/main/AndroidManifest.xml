@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.imtiaz.NoteShelf">
+    package="com.imtiaz.NoteBucket">
 
     <application
         android:allowBackup="true"
@@ -11,13 +11,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NoteShelf">
         <activity
-            android:name="com.imtiaz.NoteShelf.Activity.UpdateNotesActivity"
+            android:name="com.imtiaz.NoteBucket.Activity.UpdateNotesActivity"
             android:exported="false" />
         <activity
-            android:name="com.imtiaz.NoteShelf.Activity.InsertNotesActivity"
+            android:name="com.imtiaz.NoteBucket.Activity.InsertNotesActivity"
             android:exported="false" />
         <activity
-            android:name="com.imtiaz.NoteShelf.Activity.SplashScreen"
+            android:name="com.imtiaz.NoteBucket.Activity.SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,7 +26,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.imtiaz.NoteShelf.MainActivity"
+            android:name="com.imtiaz.NoteBucket.MainActivity"
             android:exported="false" />
     </application>
 

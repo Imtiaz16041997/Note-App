@@ -1,4 +1,4 @@
-package com.imtiaz.NoteShelf.Activity;
+package com.imtiaz.NoteBucket.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -16,10 +16,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
-import com.imtiaz.NoteShelf.Entity.Note;
-import com.imtiaz.NoteShelf.R;
-import com.imtiaz.NoteShelf.ViewModel.NotesViewModel;
-import com.imtiaz.NoteShelf.databinding.ActivityUpdateNotesBinding;
+import com.imtiaz.NoteBucket.Entity.Note;
+import com.imtiaz.NoteBucket.R;
+import com.imtiaz.NoteBucket.ViewModel.NotesViewModel;
+import com.imtiaz.NoteBucket.databinding.ActivityUpdateNotesBinding;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -72,6 +72,8 @@ public class UpdateNotesActivity extends AppCompatActivity {
                 binding.imageViewMediumUpdate.setImageResource(0);
                 binding.imageViewLowUpdate.setImageResource(0);
 
+                Toast.makeText(UpdateNotesActivity.this, "You switched to High priority", Toast.LENGTH_SHORT).show();
+
                 priority = "1";
             }
         });
@@ -83,6 +85,10 @@ public class UpdateNotesActivity extends AppCompatActivity {
                 binding.imageViewHighUpdate.setImageResource(0);
                 binding.imageViewLowUpdate.setImageResource(0);
 
+
+                Toast.makeText(UpdateNotesActivity.this, "You switched to Medium priority", Toast.LENGTH_SHORT).show();
+
+
                 priority = "2";
             }
         });
@@ -93,6 +99,8 @@ public class UpdateNotesActivity extends AppCompatActivity {
                 binding.imageViewLowUpdate.setImageResource(R.drawable.ic_done);
                 binding.imageViewHighUpdate.setImageResource(0);
                 binding.imageViewMediumUpdate.setImageResource(0);
+
+                Toast.makeText(UpdateNotesActivity.this, "You switched to Low priority", Toast.LENGTH_SHORT).show();
 
                 priority = "3";
             }
@@ -192,12 +200,13 @@ public class UpdateNotesActivity extends AppCompatActivity {
                 });
 
                 sheetDialog.show();
+                break;
 
             case R.id.ic_share:
 
                 Intent shareIntent = new Intent(Intent.ACTION_SEND);
                 shareIntent.setType("text/plain");
-                shareIntent.putExtra(Intent.EXTRA_TEXT,"\n" + snotes );
+                shareIntent.putExtra(Intent.EXTRA_TEXT,"Notes: " + snotes );
                 shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Share Via");
                 startActivity(Intent.createChooser(shareIntent, "Share..."));
                 break;

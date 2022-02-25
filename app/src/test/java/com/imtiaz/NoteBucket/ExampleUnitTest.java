@@ -1,4 +1,4 @@
-package com.imtiaz.NoteShelf;
+package com.imtiaz.NoteBucket;
 
 import org.junit.Test;
 

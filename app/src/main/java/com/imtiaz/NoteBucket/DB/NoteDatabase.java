@@ -1,4 +1,4 @@
-package com.imtiaz.NoteShelf.DB;
+package com.imtiaz.NoteBucket.DB;
 
 import android.content.Context;
 
@@ -6,8 +6,8 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-import com.imtiaz.NoteShelf.DAO.NoteDao;
-import com.imtiaz.NoteShelf.Entity.Note;
+import com.imtiaz.NoteBucket.DAO.NoteDao;
+import com.imtiaz.NoteBucket.Entity.Note;
 
 @Database(entities = {Note.class},version = 1)
 public abstract class NoteDatabase extends RoomDatabase {

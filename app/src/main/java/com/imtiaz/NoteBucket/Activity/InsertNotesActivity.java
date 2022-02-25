@@ -1,4 +1,4 @@
-package com.imtiaz.NoteShelf.Activity;
+package com.imtiaz.NoteBucket.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -10,11 +10,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.imtiaz.NoteShelf.Entity.Note;
+import com.imtiaz.NoteBucket.Entity.Note;
 
-import com.imtiaz.NoteShelf.R;
-import com.imtiaz.NoteShelf.ViewModel.NotesViewModel;
-import com.imtiaz.NoteShelf.databinding.ActivityInsertNoteBinding;
+import com.imtiaz.NoteBucket.R;
+import com.imtiaz.NoteBucket.ViewModel.NotesViewModel;
+import com.imtiaz.NoteBucket.databinding.ActivityInsertNoteBinding;
 
 
 import java.text.SimpleDateFormat;

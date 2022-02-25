@@ -1,4 +1,4 @@
-package com.imtiaz.NoteShelf.Adapter;
+package com.imtiaz.NoteBucket.Adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -12,9 +12,9 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.imtiaz.NoteShelf.Activity.UpdateNotesActivity;
-import com.imtiaz.NoteShelf.Entity.Note;
-import com.imtiaz.NoteShelf.R;
+import com.imtiaz.NoteBucket.Activity.UpdateNotesActivity;
+import com.imtiaz.NoteBucket.Entity.Note;
+import com.imtiaz.NoteBucket.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,13 +51,13 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesViewHolder> {
 
         switch (note.notesPriority) {
             case "1":
-                holder.notesPriority.setBackgroundResource(R.drawable.background_note_color_high);
+                holder.notesPriority.setBackgroundResource(R.drawable.background_note_color_3);
                 break;
             case "2":
                 holder.notesPriority.setBackgroundResource(R.drawable.background_note_color_medium);
                 break;
             case "3":
-                holder.notesPriority.setBackgroundResource(R.drawable.background_note_color_3);
+                holder.notesPriority.setBackgroundResource(R.drawable.background_note_color_high);
                 break;
         }
 

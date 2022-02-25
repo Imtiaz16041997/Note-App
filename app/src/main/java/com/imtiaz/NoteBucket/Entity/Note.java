@@ -1,4 +1,4 @@
-package com.imtiaz.NoteShelf.Entity;
+package com.imtiaz.NoteBucket.Entity;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;

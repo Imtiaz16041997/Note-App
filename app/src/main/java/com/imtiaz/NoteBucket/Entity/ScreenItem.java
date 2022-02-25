@@ -1,4 +1,4 @@
-package com.imtiaz.NoteShelf.Entity;
+package com.imtiaz.NoteBucket.Entity;
 
 public class ScreenItem {
 
