@@ -48,7 +48,7 @@ public class InsertNotesActivity extends AppCompatActivity {
 
                 Toast.makeText(InsertNotesActivity.this, "You listed priority Low", Toast.LENGTH_SHORT).show();
 
-                priority = "1";
+                priority = "3";
             }
         });
 
@@ -76,7 +76,7 @@ public class InsertNotesActivity extends AppCompatActivity {
                 Toast.makeText(InsertNotesActivity.this, "You listed priority High", Toast.LENGTH_SHORT).show();
 
 
-                priority = "3";
+                priority = "1";
             }
         });
 

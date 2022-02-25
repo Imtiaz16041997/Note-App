@@ -32,7 +32,7 @@
         android:id="@+id/textView_appName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="NOTE BUCKET"
+        android:text="NoteBucket"
         android:textSize="32dp"
         android:textColor="@color/Green2"
         app:layout_constraintEnd_toEndOf="parent"
