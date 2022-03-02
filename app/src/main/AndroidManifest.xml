@@ -9,7 +9,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_notebuckets_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.NoteShelf">
+        android:theme="@style/Theme.AppCompat">
         <activity
             android:name="com.imtiaz.NoteBucket.Activity.UpdateNotesActivity"
             android:exported="false" />
